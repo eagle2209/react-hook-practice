@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import MyAccordion from './components/MyAccordion';
 import Search from './components/Search';
 import DropDownWidget from './components/DropDownWidget';
+import Translate from './components/Translate';
 
 const panels = [
   {
@@ -37,24 +38,9 @@ const options = [
 ];
 
 export default () => {
-  const [selected, setSelected] = useState(options[0]);
-  const [showDropdown, setShowDropdown] = useState(true);
   return (
     <div>
-      <button
-        onClick={() => {
-          setShowDropdown(!showDropdown);
-        }}
-      >
-        Toggle Dropdown
-      </button>
-      {showDropdown ? (
-        <DropDownWidget
-          selected={selected}
-          onSelectedChange={setSelected}
-          options={options}
-        />
-      ) : null}
+      <Translate />
     </div>
   );
 };

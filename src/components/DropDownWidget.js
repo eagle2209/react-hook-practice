@@ -1,7 +1,7 @@
 import { Dropdown } from '@fluentui/react-northstar';
 import React, { useState, useEffect, useRef } from 'react';
 
-const DropDownWidget = ({ options, selected, onSelectedChange }) => {
+const DropDownWidget = ({ label, options, selected, onSelectedChange }) => {
   const [open, setOpen] = useState(false);
   const ref = useRef();
 
@@ -30,7 +30,7 @@ const DropDownWidget = ({ options, selected, onSelectedChange }) => {
   return (
     <div ref={ref} className='ui form'>
       <div className='field'>
-        <label className='label'>Select a color</label>
+        <label className='label'>{label}</label>
         <div
           onClick={() => setOpen(!open)}
           className={`ui selection dropdown ${open ? 'visible active' : ''}`}
